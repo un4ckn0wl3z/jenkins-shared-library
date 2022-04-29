@@ -1,8 +1,6 @@
 #!/usr/bin/env groovy
 
-def imageName = "un4ckn0wl3z/java-maven-app"
-
-def call() {
+def call(String imageName) {
     echo "building the docker image..."
     withCredentials([usernamePassword(credentialsId: "docker-hub-credentials", passwordVariable: "PASS", usernameVariable: "USER")])
             {
