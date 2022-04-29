@@ -6,7 +6,7 @@ def call(String imageName, String version) {
             {
                 sh "docker build -t ${imageName}:${version} ."
                 sh "echo $PASS | docker login -u $USER --password-stdin"
-                sh "docker push ${imageName}:dev-2.0"
+                sh "docker push ${imageName}:${version}"
             }
 
 }
